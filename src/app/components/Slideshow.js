@@ -2,9 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const images = [
-  '/assets/pjm/orang-naik-bak.jpg',
-  '/assets/pjm/orang-ngeliatin-bak.jpg',
-  '/assets/pjm/orang-angkat-bak.png',
+  '/assets/produk.jpg',
+  '/assets/produk.jpg',
+  '/assets/produk.jpg',
 ];
 
 const Slideshow = () => {
@@ -22,7 +22,10 @@ const Slideshow = () => {
   useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(
-      () => setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1)),
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        ),
       delay
     );
 
@@ -39,7 +42,11 @@ const Slideshow = () => {
       >
         {images.map((image, idx) => (
           <div className="flex-shrink-0 w-full object-cover" key={idx}>
-            <img src={image} alt={`Slide ${idx}`} className="w-full h-[15em] md:h-[20em] object-cover content-center" />
+            <img
+              src={image}
+              alt={`Slide ${idx}`}
+              className="w-full h-[15em] md:h-[20em] object-cover content-center"
+            />
           </div>
         ))}
       </div>

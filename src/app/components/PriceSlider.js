@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 
 const PriceSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
@@ -56,7 +56,9 @@ const PriceSlider = ({ min, max, onChange }) => {
           setMinVal(value);
           event.target.value = value.toString();
         }}
-        className={minVal > max - 100 ? "thumb thumb--zindex-5" : "thumb thumb--zindex-3"}
+        className={
+          minVal > max - 100 ? 'thumb thumb--zindex-5' : 'thumb thumb--zindex-3'
+        }
       />
       <input
         type="range"

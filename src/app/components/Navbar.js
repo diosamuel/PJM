@@ -19,8 +19,8 @@ const SearchForm = ({ searchInput }) => {
   }, [keywordBarang, searchInput]);
 
   return (
-    <form className="p-3 max-w-xl relative flex" method="get" action="/katalog">
-      <input type="text" name="cari" id="search" className="w-[30em] rounded-l-lg border border-gray-300 px-5 text-black focus:outline-none" placeholder="Cari Produk" minLength={0} ref={searchInput} />
+    <form className="p-3 max-w-xl relative flex" method="get" action="/toko/katalog">
+      <input type="text" name="cari" id="search" className="w-[30em] rounded-l-lg border border-gray-300 px-5 text-black focus:outline-none" placeholder="Cari Barang Disini..." minLength={0} ref={searchInput} />
       <button className="text-lg text-white bg-blue-800 px-3 rounded-r" type="submit">
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -47,12 +47,12 @@ export default function Navbar() {
       <header className="bg-white fixed top-0 z-30 w-full shadow-md border-b-4 border-white hidden lg:block">
         <div className="flex justify-between mx-10">
           <div className="flex items-center gap-5 font-regular">
-            <Link href="/" className="hidden lg:block">
+            <Link href="/toko" className="hidden lg:block">
               <Image src="/logo.jpg" alt="Logo" className="w-10" width={100} height={100} />
             </Link>
-            <Link href="/" className="text-black hover:text-black transition hover:font-medium">Home</Link>
-            <Link href="/katalog" className="text-black hover:text-black transition hover:font-medium">Katalog</Link>
-            <Link href="/tentang" className="text-black hover:text-black transition hover:font-medium">Tentang</Link>
+            <Link href="/toko" className="text-black hover:text-black transition hover:font-medium">Home</Link>
+            <Link href="/toko/katalog" className="text-black hover:text-black transition hover:font-medium">Semua Katalog</Link>
+            <Link href="/" className="text-black hover:text-black transition hover:font-medium">Tentang Kami</Link>
           </div>
 
           <div className="flex">
@@ -63,7 +63,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="/keranjang" className="text-center text-black hover:text-primary transition relative">
+            <Link href="/toko/keranjang" className="text-center text-black hover:text-primary transition relative">
               <div className="text-2xl">
                 <i className="fa-solid fa-bag-shopping"></i>
               </div>
@@ -88,11 +88,11 @@ export default function Navbar() {
           <div className="w-1/12">
             <button className="py-3" onClick={() => setOpen(!isOpen)}><i className="fa-solid fa-bars"></i></button>
           </div>
-          <form className="flex items-center w-full" method="get" action="/katalog">
+          <form className="flex items-center w-full" method="get" action="/toko/katalog">
             <input placeholder="Cari Barang Disini..." className="border border-gray-400 p-2 px-5 rounded w-full" name="cari" />
             <span className="relative right-10"><i className="fa-solid fa-magnifying-glass"></i></span>
           </form>
-          <Link href="/keranjang" className="text-center text-black hover:text-primary transition w-1/12 relative">
+          <Link href="/toko/keranjang" className="text-center text-black hover:text-primary transition w-1/12 relative">
             <div className="text-xl absolute">
               <i className="fa-solid fa-bag-shopping"></i>
             </div>

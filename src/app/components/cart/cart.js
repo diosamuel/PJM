@@ -26,7 +26,7 @@ const useCartStore = create(
       },
       increaseQuantity: (productId) => set((state) => ({
         cart: state.cart.map(item =>
-          item.id === productId ? { ...item, quantity: Math.min(item.stock, item.quantity + 1) } : item
+          item.id === productId ? { ...item, quantity: Math.min(item.stok, item.quantity + 1) } : item
         )
       })),
       decreaseQuantity: (productId) => set((state) => ({
