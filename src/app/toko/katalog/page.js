@@ -66,7 +66,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
   );
 };
 
-export default function Produk() {
+const Produk = () => {
   const searchParams = useSearchParams();
   const keywordBarang = searchParams.get('cari');
   const kategoriBarang = searchParams.get('kategori');
@@ -145,17 +145,25 @@ export default function Produk() {
             </div>
           </div>
           <div className="m-3 lg:m-0">
-            <Suspense fallback={<Spinner />}>
-              <ProductDisplay
-                products={products}
-                keyword={keywordBarang}
-                categories={selectedCategories}
-              />
-            </Suspense>
+            <ProductDisplay
+              products={products}
+              keyword={keywordBarang}
+              categories={selectedCategories}
+            />
           </div>
         </div>
       </div>
       <Footer />
     </>
   );
-}
+};
+
+const ProdukPage = () => {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <Produk />
+    </Suspense>
+  );
+};
+
+export default ProdukPage;
