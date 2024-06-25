@@ -73,7 +73,7 @@ export default function Tentang() {
             </h1>
             <div className="flex gap-3" data-aos="fade-up">
               <Link
-                href="https://wa.me/6281310893418?text=Selamat+malam,+mau+bertanya+tentang...."
+                href="https://wa.me/6281310893418"
                 className="p-3 rounded-lg bg-green-500 text-white font-semibold flex gap-2 items-center"
               >
                 <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp
@@ -219,7 +219,7 @@ export default function Tentang() {
             </h1>
             <div className="flex gap-3">
               <Link
-                href="https://wa.me/6281310893418?text=Selamat+malam,+mau+bertanya+tentang...."
+                href="https://wa.me/6281310893418"
                 className="p-3 rounded-lg bg-green-500 text-white font-semibold flex gap-2 items-center"
               >
                 <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp

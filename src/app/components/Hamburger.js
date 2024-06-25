@@ -8,7 +8,7 @@ export default function Hamburger({ open }) {
         <Link href="/" className="font-medium">
           Home
         </Link>
-        <Link href="/katalog" className="font-medium">
+        <Link href="/toko/katalog" className="font-medium">
           Cari Katalog
         </Link>
         <Link href="#" className="font-medium">
@@ -17,7 +17,7 @@ export default function Hamburger({ open }) {
       </div>
       <div className="flex flex-col gap-3">
         <Link
-          href="/"
+          href="/toko"
           className="font-medium py-2 bg-blue-800 px-4 text-white rounded-lg shadow w-full"
         >
           Buka Toko

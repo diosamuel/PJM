@@ -15,7 +15,7 @@ export default function Card({ produk }) {
       confirmButtonText: 'Buka Keranjang',
     }).then((result) => {
       if (result.isConfirmed) {
-        router.push('/keranjang');
+        router.push('/toko/keranjang');
       }
     });
   }
@@ -49,7 +49,7 @@ export default function Card({ produk }) {
           <div className="flex flex-wrap md:flex-row gap-1 md:gap-2">
             <div className="bg-blue-500 w-fit rounded px-2 py-1">
               <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center">
-                <i className="fa-solid fa-handshake"></i>Kategori{' '}
+                <i className="fa-solid fa-truck-pickup"></i>Kategori{' '}
                 {produk.kategori.toUpperCase()}
               </p>
             </div>

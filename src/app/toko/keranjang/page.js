@@ -48,7 +48,7 @@ export default function Keranjang() {
         <h1 className="text-lg md:text-xl font-semibold mt-20 ml-5 md:ml-0 mb-3">
           Keranjang Saya
         </h1>
-        <div className="flex flex-col md:flex-row w-full gap-5">
+        <div className="flex flex-col md:flex-row w-full gap-5 mb-20">
           {!!cart.length ? (
             <div className="w-full md:w-10/12">
               <div className="flex flex-col gap-4">
@@ -78,7 +78,7 @@ export default function Keranjang() {
                   Wah, keranjang belanjamu kosong
                 </h1>
                 <Link
-                  href="/katalog"
+                  href="/toko/katalog"
                   className="bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
                 >
                   Cari Katalog

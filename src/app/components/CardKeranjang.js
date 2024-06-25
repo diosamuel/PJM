@@ -31,7 +31,7 @@ export default function CardKeranjang({className,produk,checked}) {
         <div className="flex flex-col lg:flex-row justify-between gap-3 bg-white p-5 shadow-sm hover:shadow-lg border border-gray-100 lg:rounded-md">
           <div className="flex md:gap-6 gap-3">
             {/*<input type="checkbox" className="form-checkbox w-5 bg-indigo-100" defaultChecked/>*/}
-            <Link href={`/katalog/${produk.id}`}>
+            <Link href={`/toko/katalog/${produk.id}`}>
                 <img src={`${process.env.NEXT_PUBLIC_API_HOST}/image/${produk.images[0]}`} className="w-32 h-32 object-cover object-center rounded-lg"/>
             </Link>
             <div>

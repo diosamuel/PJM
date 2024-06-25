@@ -36,22 +36,26 @@ export default function Page({ params }) {
     setJumlah((prevJumlah) => (prevJumlah > 1 ? prevJumlah - 1 : 1));
   };
 
+  async function fetchStats() {
+    await axios.put(
+      `${process.env.NEXT_PUBLIC_API_HOST}/api/statistik/${params.slug}`
+    );
+  }
+
   useEffect(() => {
+    console.log('i fire once');
+    (async ()=>await fetchStats())()
     const fetchData = async () => {
       try {
-        await axios.put(
-          `${process.env.NEXT_PUBLIC_API_HOST}/api/statistik/${params.slug}`
-        );
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_API_HOST}/api/posts/${params.slug}`
         );
         if (res.status != 200) {
-          throw new Error('Failed to fetch');
+          setError(true)
         }
         const result = await res.data;
         setProduk({ ...result, quantity: 1 });
       } catch (error) {
-        // throw error
         setError(true);
       } finally {
         setLoading(false);
@@ -71,7 +75,7 @@ export default function Page({ params }) {
       confirmButtonText: 'Buka Keranjang',
     }).then((result) => {
       if (result.isConfirmed) {
-        router.push('/keranjang');
+        router.push('/toko/keranjang');
       }
     });
   }
@@ -161,7 +165,7 @@ export default function Page({ params }) {
                   </p>
                 </div>
 
-                <div className="mt-3 flex flex-col lg:flex-row gap-3 border-b border-gray-200 py-5 text-center">
+                <div className="mt-3 flex flex-col lg:flex-row gap-3 py-5 text-center">
                   <button className="w-full bg-green-600 rounded-lg px-2 py-3 text-white text-md border border-green-600 hover:bg-white hover:text-green-600">
                     <i className="fa-brands fa-whatsapp"></i> Beli via Whatsapp
                   </button>
@@ -183,25 +187,25 @@ export default function Page({ params }) {
                     warna={produk.warna}
                     berat={produk.berat}
                   />
-                  <div className="flex gap-3 mt-4 items-center">
+                  <div className="flex gap-3 my-4 pb-4 items-center border-b border-gray-200">
                     <p>Bagikan ke</p>
                     <Link
-                      href="#"
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${router.pathname}`}
                       className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="#"
+                      href={`https://twitter.com/intent/tweet?url=${router.pathname}&text=Pardi+Jaya+Motor`}
                       className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
                     >
                       <i className="fa-brands fa-twitter"></i>
                     </Link>
                     <Link
-                      href="#"
+                      href={`https://wa.me/?text=Temukan+Pardi+Jaya+Motor%20${router.pathname}`}
                       className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
                     >
-                      <i className="fa-brands fa-instagram"></i>
+                      <i className="fa-brands fa-whatsapp"></i>
                     </Link>
                   </div>
                   <div className="my-5 md:m-0 w-100">
@@ -225,7 +229,7 @@ export default function Page({ params }) {
         <div className="flex flex-col justify-center items-center h-screen gap-3">
           <h1 className="text-2xl font-semibold">Barang Tidak Ditemukan</h1>
           <Link
-            href="/katalog"
+            href="/toko/katalog"
             className="bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
           >
             Cari Katalog
