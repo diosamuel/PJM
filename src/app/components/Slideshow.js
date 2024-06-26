@@ -2,9 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const images = [
-  '/assets/produk.jpg',
-  '/assets/produk.jpg',
-  '/assets/produk.jpg',
+  '/assets/orang-angkat-bak.jpg',
+  '/assets/orang-ngeliatin-bak.jpg',
+  '/assets/orang-naik-bak.jpg',
 ];
 
 const Slideshow = () => {
@@ -45,7 +45,7 @@ const Slideshow = () => {
             <img
               src={image}
               alt={`Slide ${idx}`}
-              className="w-full h-[15em] md:h-[20em] object-cover content-center"
+              className="w-full h-[15em] md:h-[25em] object-cover content-center"
             />
           </div>
         ))}

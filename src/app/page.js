@@ -22,18 +22,20 @@ export default function Tentang() {
 
   const barang = [
     {
-      img: '/assets/produk.jpg',
-      nama: 'BAK CARRY 1000 SPAKBOR',
-      harga: 300000,
+      img: '/assets/IMG-20230821-WA0009.jpg',
+      nama: 'Bak Levia Hitam',
+      harga: 35000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
+      kategori:"bak",
     },
     {
-      img: '/assets/produk.jpg',
+      img: '/assets/bak_kargo_super.jpg',
       nama: 'BAK PICK UP GRANMAX HITAM',
       harga: 300000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
+      kategori:"bak",
     },
     {
       img: '/assets/produk.jpg',
@@ -41,20 +43,15 @@ export default function Tentang() {
       harga: 1090000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
+      kategori:"bak",
     },
     {
-      img: '/assets/produk.jpg',
-      nama: 'BAK DOYOK LV3000',
-      harga: 300000,
-      awal: 400000,
+      img: '/assets/565_mm_22_inchx_3cm_dop_roda_bus_belakang.jpg',
+      nama: 'Roda Bus Belakang Tesla',
+      harga: 120000,
+      awal: 49900,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-    },
-    {
-      img: '/assets/produk.jpg',
-      nama: 'BAK FJ45 HIJAU',
-      harga: 350000,
-      awal: 400000,
-      deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
+      kategori:"Sparepart",
     },
   ];
 
@@ -148,12 +145,13 @@ export default function Tentang() {
                 'Box Mobil',
                 'Sparepart Lainnya',
               ].map((kategori, p) => (
-                <button
+                <Link
+                  href="/toko"
                   key={p}
                   className="px-3 py-2 text-sm border border-blue-800 text-blue-800 bg-white rounded-full"
                 >
                   {kategori}
-                </button>
+                </Link>
               ))}
             </div>
             <div className="grid grid-cols-4 w-full overflow-x-auto gap-[21em] lg:gap-2 pl-3 md:pl-0 md:w-fit">

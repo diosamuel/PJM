@@ -56,9 +56,9 @@ export default function Katalog() {
 						</h2>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
-						{barang ? (
+						{barang.length ? (
 							barang
-								.slice(0, 5)
+								.slice(0, 4)
 								.map((produk, n) => <Card key={n} produk={produk} />)
 						) : (
 							<h1>Kosong</h1>
@@ -91,9 +91,13 @@ export default function Katalog() {
 						</h2>
 					</div>
 					<div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-4">
-						{barang.map((produk, n) => (
-							<Card produk={produk} />
-						))}
+						{barang.length ? (
+							barang.map((produk, n) => (
+								<Card produk={produk} />
+							))
+						):(
+							<h1>Kosong</h1>
+						)}
 					</div>
 				</div>
 			</div>

@@ -38,7 +38,13 @@ export default function Card({ produk }) {
               {produk.nama}
             </h4>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
+            <div className="bg-blue-500 w-fit rounded px-2 py-1">
+              <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center">
+                <i className="fa-solid fa-truck-pickup"></i>Kategori{' '}
+                {produk.kategori.toUpperCase()}
+              </p>
+            </div>
             <div className="bg-orange-500 w-fit rounded px-2 py-1">
               <p className="text-sm font-bold text-white flex gap-1 items-center">
                 <i className="fa-solid fa-handshake"></i>Bisa COD

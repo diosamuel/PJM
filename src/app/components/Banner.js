@@ -16,11 +16,11 @@ export default function Banner({ className }) {
 			>
 				<div>
 					<Image
-						src="/assets/cobabaner.png"
+						src="/assets/baner.png"
 						width={0}
 						height={0}
 						sizes="100vw"
-						className="w-100 h-[10em] lg:h-[60vh] object-cover rounded"
+						className="w-100 h-[10em] lg:h-[60vh] object-fill rounded"
 					/>
 				</div>
 				<div>
@@ -29,7 +29,7 @@ export default function Banner({ className }) {
 						width={0}
 						height={0}
 						sizes="100vw"
-						className="w-100 h-[10em] lg:h-[60vh] object-cover rounded"
+						className="w-100 h-[10em] lg:h-[60vh] object-contain rounded"
 					/>
 				</div>
 			</Carousel>

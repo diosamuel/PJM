@@ -54,7 +54,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
       ) : (
         <div className="flex justify-between mb-3 text-xl">
           <h1 className="font-semibold">Semua Barang</h1>
-          <h1 className="block md:hidden">Filter</h1>
+          <h1 className="block md:hidden flex gap-2 text-sm items-center"><i class="fa-solid fa-filter"></i> Filter</h1>
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
