@@ -101,7 +101,7 @@ export default function Page({ params }) {
                     <img
                       src={
                         image
-                          ? `${process.env.NEXT_PUBLIC_API_HOST}/image/${image}`
+                          ? `${process.env.NEXT_PUBLIC_API_HOST}/api/images/${image}`
                           : `https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png`
                       }
                       className="md:rounded-lg h-[20em] lg:h-[30em] object-contain object-center"

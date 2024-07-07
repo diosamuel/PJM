@@ -52,9 +52,8 @@ const ProductDisplay = ({ products, keyword, categories }) => {
           <span className="font-semibold">"{keyword}"</span>
         </h1>
       ) : (
-        <div className="flex justify-between mb-3 text-xl">
+        <div className="flex justify-between mb-3 text-xl hidden md:block">
           <h1 className="font-semibold">Semua Barang</h1>
-          <h1 className="block md:hidden flex gap-2 text-sm items-center"><i class="fa-solid fa-filter"></i> Filter</h1>
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
@@ -67,6 +66,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
 };
 
 const Produk = () => {
+  const [sidebarMobile,toggleSidebarMobile]=useState(false);
   const searchParams = useSearchParams();
   const keywordBarang = searchParams.get('cari');
   const kategoriBarang = searchParams.get('kategori');
@@ -113,8 +113,14 @@ const Produk = () => {
     <>
       <Navbar />
       <div className="flex flex-col justify-between items-center mt-20 lg:mt-24 mb-10">
-        <div className="container flex flex-col lg:flex-row gap-3">
-          <div className="space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full md:sticky md:top-20 md:w-2/12 hidden md:block bg-white">
+        <div className="container flex flex-col md:flex-row gap-3">
+          <div className="flex justify-between mb-3 text-lg fixed md:static w-full md:w-fit z-10 px-5 md:p-0 py-3 top-16 bg-white shadow">
+            <h1 className="font-semibold block md:hidden">Semua Barang</h1>
+            <button onClick={()=>toggleSidebarMobile(!sidebarMobile)} className="block md:hidden flex gap-2 text-sm items-center">
+              <i class="fa-solid fa-filter"></i> Filter
+            </button>
+          </div>
+          <div className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile?`-left-36`:`left-0`} transition md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}>
             <div>
               <p className="text-sm">Filter</p>
               <h3 className="text-xl mb-3 uppercase font-semibold">Kategori</h3>
@@ -144,7 +150,7 @@ const Produk = () => {
               </div>
             </div>
           </div>
-          <div className="m-3 lg:m-0">
+          <div className="m-3 md:m-0">
             <ProductDisplay
               products={products}
               keyword={keywordBarang}
