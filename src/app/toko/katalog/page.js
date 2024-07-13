@@ -35,7 +35,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
           ditemukan!
         </h1>
         <Link
-          href="/katalog"
+          href="/toko/katalog"
           className="bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
         >
           Lihat Semua Katalog
