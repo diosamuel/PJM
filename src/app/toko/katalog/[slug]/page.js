@@ -43,7 +43,6 @@ export default function Page({ params }) {
   }
 
   useEffect(() => {
-    console.log('i fire once');
     (async ()=>await fetchStats())()
     const fetchData = async () => {
       try {
@@ -166,7 +165,7 @@ export default function Page({ params }) {
                 </div>
 
                 <div className="mt-3 flex flex-col lg:flex-row gap-3 py-5 text-center">
-                  <Link href="https://wa.me/6281310893418?text=Beli" className="w-full bg-green-600 rounded-lg px-2 py-3 text-white text-md border border-green-600 hover:bg-white hover:text-green-600">
+                  <Link href="https://wa.me/6281310893418?text=Halo+Bosq" className="w-full bg-green-600 rounded-lg px-2 py-3 text-white text-md border border-green-600 hover:bg-white hover:text-green-600">
                     <i className="fa-brands fa-whatsapp"></i> Beli via Whatsapp
                   </Link>
                   <button
