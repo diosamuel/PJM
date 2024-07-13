@@ -8,7 +8,14 @@ import Footer from '@/app/components/Footer';
 import Spinner from '@/app/components/Spinner';
 
 const fetchProducts = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/posts/`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/posts/`, {
+    headers: {
+      'Cache-Control': 'no-cache',
+      Pragma: 'no-cache',
+      Expires: '0',
+    },
+  });
+
   if (!res.ok) throw new Error('Failed to fetch');
   return await res.json();
 };
@@ -66,7 +73,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
 };
 
 const Produk = () => {
-  const [sidebarMobile,toggleSidebarMobile]=useState(false);
+  const [sidebarMobile, toggleSidebarMobile] = useState(false);
   const searchParams = useSearchParams();
   const keywordBarang = searchParams.get('cari');
   const kategoriBarang = searchParams.get('kategori');
@@ -116,11 +123,16 @@ const Produk = () => {
         <div className="container flex flex-col md:flex-row gap-3">
           <div className="flex justify-between mb-3 text-lg fixed md:static w-full md:w-fit z-10 px-5 md:p-0 py-3 top-16 bg-white shadow">
             <h1 className="font-semibold block md:hidden">Semua Barang</h1>
-            <button onClick={()=>toggleSidebarMobile(!sidebarMobile)} className="block md:hidden flex gap-2 text-sm items-center">
+            <button
+              onClick={() => toggleSidebarMobile(!sidebarMobile)}
+              className="block md:hidden flex gap-2 text-sm items-center"
+            >
               <i class="fa-solid fa-filter"></i> Filter
             </button>
           </div>
-          <div className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile?`-left-36`:`left-0`} transition md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}>
+          <div
+            className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile ? `-left-36` : `left-0`} transition md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}
+          >
             <div>
               <p className="text-sm">Filter</p>
               <h3 className="text-xl mb-3 uppercase font-semibold">Kategori</h3>
