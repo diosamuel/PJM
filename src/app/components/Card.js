@@ -24,7 +24,7 @@ export default function Card({ produk }) {
       <Link href={`/toko/katalog/${produk.id}`}>
         <div className="relative">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_HOST}/api/images/${produk.images[0]}`}
+            src={`${process.env.NEXT_PUBLIC_API_HOST}/images/${produk.images[0]}`}
             alt="Produk"
             className="w-full object-cover h-[10em]"
           />
