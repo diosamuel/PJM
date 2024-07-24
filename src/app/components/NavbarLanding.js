@@ -29,14 +29,17 @@ export default function NavbarLanding() {
         <Hamburger open={isOpen}/>
         <header className={`fixed top-0 z-30 w-full px-2 text-center ${scrolled ? 'text-black bg-white shadow-xl' : 'text-white bg-transparent'}`}>
             <div className="flex p-2 gap-3 justify-between items-center w-100">
-                <h1 className="text-lg font-medium">Pardi Jaya Motor</h1>
+                <div className="flex gap-3 items-center">
+                  <img src="logo.png" className="w-8 h-8 rounded-full"/>
+                  <h1 className="text-lg font-medium">Pardi Jaya Motor</h1>
+                </div>
                 <div className="flex gap-5 hidden lg:inline-flex">
                     <Link href="#">Home</Link>
                     <Link href="#">Tentang</Link>
                     <Link href="https://wa.me/6281310893418">Chat Whatsapp</Link>
                 </div>
                 <div className="flex hidden lg:inline-flex gap-3">
-                    <Link href="/toko" className="font-medium py-2 bg-blue-800 px-4 text-white rounded-lg shadow">Buka Toko</Link>
+                    <Link href="/toko" className="font-medium py-2 bg-blue-800 px-4 text-white rounded-lg shadow">Lihat Katalog</Link>
                     {/*<button className="py-3 bg-blue-800 px-3 py-2 text-white rounded-lg">Login</button>*/}
                 </div>
                 <button className="py-3 lg:hidden" onClick={()=>setOpen(!isOpen)}><i className="fa-solid fa-bars"></i></button>

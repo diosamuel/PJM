@@ -32,7 +32,7 @@ export default function Card({ produk }) {
         <div className="flex flex-col gap-2 my-4 mx-3">
           <div className="-space-y-1">
             <div className="flex flex-col md:flex-row items-baseline md:space-x-2">
-              <p className="text-lg md:text-2xl text-primary font-bold text-orange-600">
+              <p className="text-lg md:text-2xl text-primary font-bold text-dark">
                 Rp{Number(produk.diskon).toLocaleString('id-ID')}
               </p>
               <p className="text-xs text-gray-400 line-through">
@@ -47,18 +47,18 @@ export default function Card({ produk }) {
             <p>{produk.deskripsi.slice(0, 40)}...</p>
           </div>
           <div className="flex flex-wrap md:flex-row gap-1 md:gap-2">
-            <div className="bg-blue-500 w-fit rounded px-2 py-1">
+            <div className="bg-blue-700 w-fit px-2 py-1">
               <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center">
                 <i className="fa-solid fa-truck-pickup"></i>Kategori{' '}
                 {produk.kategori.toUpperCase()}
               </p>
             </div>
-            <div className="bg-orange-500 w-fit rounded px-2 py-1">
+            <div className="bg-orange-600 w-fit px-2 py-1">
               <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center">
                 <i className="fa-solid fa-handshake"></i>Bisa COD
               </p>
             </div>
-            <div className="bg-green-700 w-fit rounded px-2 py-1">
+            <div className="bg-green-700 w-fit px-2 py-1">
               <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center">
                 <i className="fa-solid fa-repeat"></i>Tukar Tambah
               </p>

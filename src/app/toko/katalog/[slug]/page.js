@@ -128,12 +128,12 @@ export default function Page({ params }) {
                 <span className="uppercase">{produk.kategori}</span>
               </p>
               <div className="flex gap-2">
-                <div className="bg-orange-500 w-fit rounded px-2 py-1">
+                <div className="bg-orange-600 w-fit px-2 py-1">
                   <p className="text-sm font-bold text-white flex gap-1 items-center">
                     <i className="fa-solid fa-handshake"></i>Bisa COD
                   </p>
                 </div>
-                <div className="bg-green-700 w-fit rounded px-2 py-1">
+                <div className="bg-green-700 w-fit px-2 py-1">
                   <p className="text-sm font-bold text-white flex gap-1 items-center">
                     <i className="fa-solid fa-repeat"></i>Tukar Tambah
                   </p>

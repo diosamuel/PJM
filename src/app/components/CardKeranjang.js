@@ -39,10 +39,10 @@ export default function CardKeranjang({className,produk,checked}) {
               <div className="flex flex-col justify-between gap-4">
                 <p className="text-xl lg:text-3xl font-semibold text-black">Rp{Number(produk.harga*seeQuantity(produk.id)).toLocaleString('id-ID')}</p>
                 <div className="flex flex-col md:flex-row gap-2">
-                    <div className="bg-orange-500 w-fit rounded px-2 py-1">
+                    <div className="bg-orange-600 w-fit px-2 py-1">
                         <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center"><i className="fa-solid fa-handshake"></i>Bisa COD</p>
                     </div>
-                    <div className="bg-green-700 w-fit rounded px-2 py-1">
+                    <div className="bg-green-700 w-fit px-2 py-1">
                         <p className="text-xs md:text-sm font-bold text-white flex gap-1 items-center"><i className="fa-solid fa-repeat"></i>Tukar Tambah</p>
                     </div>
                 </div>

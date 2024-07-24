@@ -27,7 +27,7 @@ export default function Tentang() {
       harga: 35000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-      kategori:"bak",
+      kategori: 'bak',
     },
     {
       img: '/assets/bak_kargo_super.jpg',
@@ -35,7 +35,7 @@ export default function Tentang() {
       harga: 300000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-      kategori:"bak",
+      kategori: 'bak',
     },
     {
       img: '/assets/produk.jpg',
@@ -43,7 +43,7 @@ export default function Tentang() {
       harga: 1090000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-      kategori:"bak",
+      kategori: 'bak',
     },
     {
       img: '/assets/565_mm_22_inchx_3cm_dop_roda_bus_belakang.jpg',
@@ -51,7 +51,7 @@ export default function Tentang() {
       harga: 120000,
       awal: 49900,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-      kategori:"Sparepart",
+      kategori: 'Sparepart',
     },
   ];
 
@@ -77,9 +77,10 @@ export default function Tentang() {
               </Link>
               <Link
                 href="/toko"
-                className="p-3 rounded-lg bg-blue-800 text-white font-semibold"
+                className="p-3 rounded-lg bg-blue-800 text-white font-semibold flex gap-2 items-center"
               >
-                Buka Toko
+                Lihat Katalog
+                <i class="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
           </div>
@@ -159,9 +160,9 @@ export default function Tentang() {
                 <Card key={n} produk={produk} />
               ))}
             </div>
-            <button className="rounded-full px-4 py-3 bg-blue-800 text-white mb-10 flex gap-2 items-center hover:shadow">
+            <Link href="/toko" className="rounded-full px-4 py-3 bg-blue-800 text-white mb-10 flex gap-2 items-center hover:shadow">
               Lihat Semua Barang<i className="fa-solid fa-arrow-right"></i>
-            </button>
+            </Link>
           </section>
 
           <section
@@ -222,9 +223,17 @@ export default function Tentang() {
               >
                 <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp
               </Link>
-              <button className="p-3 rounded-lg bg-blue-800 text-white font-semibold">
-                Buka Toko
-              </button>
+
+              {/*              <button className="p-3 rounded-lg bg-blue-800 text-white font-semibold">
+                Lihat Katalog
+              </button>*/}
+              <Link
+                href="/toko"
+                className="p-3 rounded-lg bg-blue-800 text-white font-semibold flex gap-2 items-center"
+              >
+                Lihat Katalog
+                <i class="fa-solid fa-arrow-right"></i>
+              </Link>
             </div>
           </section>
           <Footer />
