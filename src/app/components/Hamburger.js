@@ -20,7 +20,7 @@ export default function Hamburger({ open }) {
           href="/toko"
           className="font-medium py-2 bg-blue-800 px-4 text-white rounded-lg shadow w-full"
         >
-          Buka Toko
+          Lihat Katalog
         </Link>
       </div>
     </div>
