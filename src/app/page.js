@@ -175,7 +175,7 @@ export default function Tentang() {
             <p className="md:mb-10">
               Sudah lebih dari 5+ tahun usaha kami berjalan
             </p>
-            <div className="grid grid-cols-4 w-full gap-[21em] lg:gap-2 overflow-x-auto pl-3 lg:pl-0 lg:w-fit">
+            <div className="grid grid-cols-4 w-full gap-[21em] lg:gap-2 overflow-x-auto pl-3 lg:pl-0 lg:w-fit mb-10">
               <TestimonialCard
                 name="Remitha Angkat"
                 stars={5}
