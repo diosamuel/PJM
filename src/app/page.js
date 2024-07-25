@@ -166,10 +166,10 @@ export default function Tentang() {
           </section>
 
           <section
-            className="flex flex-col justify-center items-center md:h-[100vh] gap-6"
+            className="flex flex-col justify-center items-center md:h-[100vh] gap-6 bg-blue-800 text-white"
             data-aos="fade-up"
           >
-            <h1 className="text-2xl md:text-3xl font-semibold mt-10 md:my-0 text-center">
+            <h1 className="text-2xl md:text-3xl font-semibold mt-10 md:my-0 text-center text-white">
               Dipercayai Oleh Banyak Konsumen
             </h1>
             <p className="md:mb-10">
