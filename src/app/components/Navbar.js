@@ -128,7 +128,7 @@ export default function Navbar() {
                 {cart.length || 0}
               </div>
             </Link>
-            <Link
+{/*            <Link
               href={`${process.env.NEXT_PUBLIC_API_DASHBOARD}/login`}
               className="text-center text-black hover:text-primary transition relative hidden lg:block"
             >
@@ -136,7 +136,7 @@ export default function Navbar() {
                 <i className="fa-regular fa-user"></i>
               </div>
               <div className="text-sm leading-3">Akun</div>
-            </Link>
+            </Link>*/}
           </div>
         </div>
       </header>
