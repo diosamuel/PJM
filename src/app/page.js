@@ -61,13 +61,16 @@ export default function Tentang() {
         <>
           <Navbar />
           <WhatsappFloat />
-          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/landing-banner.jpg')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 pl-5 md:pl-20">
+          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 pl-5 md:pl-20">
+            <div className="mb-3">
             <h1
-              className="text-4xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 leading-tight"
+              className="text-4xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 leading-tight mb-4"
               data-aos="fade-up"
             >
               Beli Box, Bak, dan Sparepart Mobil disini!
             </h1>
+            <h3 className="text-xl md:text-2xl text-white md:font-semibold">Pardi Jaya Motor, Jual Bak/Box Pick Up, Bisa kirim ke seluruh indonesia</h3>
+            </div>
             <div className="flex gap-3" data-aos="fade-up">
               <Link
                 href="https://wa.me/6281310893418"
@@ -209,6 +212,21 @@ export default function Tentang() {
             <Slideshow />
           </section>
 
+          <section
+            className="flex flex-col justify-center items-center gap-3 my-10"
+            data-aos="fade-up"
+          >
+            <h1 className="text-2xl md:text-3xl font-semibold my-5 md:my-10">
+              Lokasi Pardi Jaya Motor
+            </h1>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d506.51571714265623!2d106.60786319199144!3d-6.223958838880772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ffc9c2297359%3A0xfa4e86c9e3b1caae!2sPardi%20Jaya%20Motor%20Jual%20Bak%20Pick%20Up%20Tangerang!5e1!3m2!1sid!2sid!4v1713675145084!5m2!1sid!2sid"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="border border-gray-300 rounded-lg w-full h-[10em] lg:h-[400px]"
+                ></iframe>
+          </section>
           <section
             className="flex flex-col text-center items-center justify-center md:mx-5 md:rounded-lg m-0 mt-20 md:mb-10 rounded-none h-[40vh] lg:h-[70vh] bg-[url('/assets/landing-banner-2.jpg')] bg-cover bg-center lg:bg-left gap-6 lg:gap-3"
             data-aos="zoom-in"

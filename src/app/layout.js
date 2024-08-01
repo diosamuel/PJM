@@ -14,13 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="title" content="Pardi Jaya Motor Jual Bak/Box Pick Up kirim seluruh indonesia ">
-        <meta name="description" content="Pardi Jaya Motor di Tangerang menjual bak pick-up dengan layanan COD dan tukar-tambah di JABODETABEK. Hubungi WhatsApp: 081310893418.">
-        <meta name="keywords" content="pardi jaya motor, pardi, jaya, motor, bak, pickup, bak pickup, box, sparepart, potong angkot">
-        <meta name="robots" content="index, follow">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="language" content="English">
-        <meta name="author" content="Pardi Jaya Motor">
+        <meta name="title" content="Pardi Jaya Motor Jual Bak/Box Pick Up kirim seluruh indonesia "/>
+        <meta name="description" content="Pardi Jaya Motor di Tangerang menjual bak pick-up dengan layanan COD dan tukar-tambah di JABODETABEK. Hubungi WhatsApp: 081310893418."/>
+        <meta name="keywords" content="pardi jaya motor, pardi, jaya, motor, bak, pickup, bak pickup, box, sparepart, potong angkot"/>
+        <meta name="robots" content="index, follow"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="language" content="English"/>
+        <meta name="author" content="Pardi Jaya Motor"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
@@ -38,13 +38,6 @@ export default function RootLayout({ children }) {
               });
           `}
       </Script>
-{/*        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-76PX9JGG3V');
-        </script>*/}
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
