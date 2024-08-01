@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta name="title" content="Pardi Jaya Motor Jual Bak/Box Pick Up kirim seluruh indonesia "/>
         <meta name="description" content="Pardi Jaya Motor di Tangerang menjual bak pick-up dengan layanan COD dan tukar-tambah di JABODETABEK. Hubungi WhatsApp: 081310893418."/>
         <meta name="keywords" content="pardi jaya motor, pardi, jaya, motor, bak, pickup, bak pickup, box, sparepart, potong angkot"/>
@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="language" content="English"/>
         <meta name="author" content="Pardi Jaya Motor"/>
+        {/*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous"/>*/}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
@@ -38,7 +39,7 @@ export default function RootLayout({ children }) {
               });
           `}
       </Script>
-      </Head>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
