@@ -7,5 +7,5 @@ export default function WhatsappMessage(carts) {
 	});
 	craft += `\n\nTOTAL: Rp${Number(total).toLocaleString('id-ID')}`;
 	craft += "\nApakah masih ada Bosq?"
-	return `https://wa.me/6283876944538?text=${encodeURIComponent(craft)}`;
+	return `https://wa.me/6281310893418?text=${encodeURIComponent(craft)}`;
 }
