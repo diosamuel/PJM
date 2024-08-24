@@ -32,10 +32,12 @@ const filterProducts = (products, keyword, categories) => {
 };
 
 const ProductDisplay = ({ products, keyword, categories }) => {
+  console.log(products)
+  const randomProducts = [...products].sort(() => 0.5 - Math.random()).slice(0, 3);
   const filteredProducts = filterProducts(products, keyword, categories);
   if (keyword && !filteredProducts.length) {
     return (
-      <div className="h-screen m-5 flex flex-col items-center">
+      <div className="m-5 flex flex-col items-center">
         <h1 className="flex-col justify-center items-center text-xl text-center lg:text-2xl font-medium mb-5">
           Maaf, barang <span className="font-semibold">"{keyword}"</span> {!!categories.length && `di kategori ${categories}`} tidak
           ditemukan!
@@ -46,6 +48,13 @@ const ProductDisplay = ({ products, keyword, categories }) => {
         >
           Lihat Semua Katalog
         </Link>
+
+        <h1 className="my-5">Mungkin Anda Suka Ini</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+        {randomProducts.map((product, index) => (
+          <Card key={index} produk={product} />
+        ))}
+      </div>
       </div>
     );
   }
@@ -160,7 +169,7 @@ const Produk = () => {
               </div>
             </div>
           </div>
-          <div className="m-3 mt-14 md:m-0">
+          <div className="m-3 mt-14 mb-10 md:m-0 md:w-10/12">
             <ProductDisplay
               products={products}
               keyword={keywordBarang}
