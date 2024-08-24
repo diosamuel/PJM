@@ -65,19 +65,19 @@ export default function Tentang() {
           <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 pl-5 md:pl-20">
             <div className="mb-3">
             <h1
-              className="text-4xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 mb-4"
+              className="text-3xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 mb-4"
               data-aos="fade-up"
             >
               Beli Box Pickup, Bak Truk, dan Sparepart Kendaraan lainnya disini!
             </h1>
-            <h3 className="text-xl md:text-2xl text-white md:font-medium w-4/12">Pardi Jaya Motor, Jual Bak/Box/Sparepart Pick Up, Bisa kirim ke seluruh indonesia</h3>
+            <h3 className="text-xl md:text-2xl text-white md:font-medium md:w-4/12">Pardi Jaya Motor, Jual Bak/Box/Sparepart Pick Up, Bisa kirim ke seluruh indonesia</h3>
             </div>
             <div className="flex gap-3 mt-5" data-aos="fade-up">
               <Link
                 href="https://wa.me/6281310893418"
                 className="p-3 rounded-lg bg-green-500 text-white font-semibold flex gap-2 items-center"
               >
-                <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp Sekarang!
+                <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp
               </Link>
               <Link
                 href="/toko"
