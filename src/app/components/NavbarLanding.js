@@ -35,7 +35,7 @@ export default function NavbarLanding() {
                 </div>
                 <div className="flex gap-5 hidden lg:inline-flex">
                     <Link href="#">Home</Link>
-                    <Link href="#">Tentang</Link>
+                    <Link href="#about">Tentang</Link>
                     <Link href="https://wa.me/6281310893418">Chat Whatsapp</Link>
                 </div>
                 <div className="flex hidden lg:inline-flex gap-3">

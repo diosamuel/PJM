@@ -27,8 +27,12 @@ export default function Page({ params }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await axios.put(`${process.env.NEXT_PUBLIC_API_HOST}/api/statistik/${params.slug}`);
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/api/posts/${params.slug}`);
+        await axios.put(
+          `${process.env.NEXT_PUBLIC_API_HOST}/api/statistik/${params.slug}`
+        );
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_HOST}/api/posts/${params.slug}`
+        );
         if (res.status !== 200) {
           setError(true);
         } else {
@@ -44,7 +48,9 @@ export default function Page({ params }) {
   }, [params.slug]);
 
   const handleIncrement = () => {
-    setJumlah((prevJumlah) => (prevJumlah >= produk.stok ? prevJumlah : prevJumlah + 1));
+    setJumlah((prevJumlah) =>
+      prevJumlah >= produk.stok ? prevJumlah : prevJumlah + 1
+    );
   };
 
   const handleDecrement = () => {
@@ -61,6 +67,27 @@ export default function Page({ params }) {
     }).then((result) => {
       if (result.isConfirmed) {
         router.push('/toko/keranjang');
+      }
+    });
+  };
+
+  const jualBakModal = () => {
+    Swal.fire({
+      title: 'Tukar Tambah',
+      text: `Anda ingin menukar Bak/Box Anda? Chat Whatsapp Dibawah!`,
+      icon: 'success',
+      confirmButtonText: 'Chat Whatsapp',
+      customClass: {
+        confirmButton: 'bg-blue-600',
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let nomorTelepon = '6281310893418';
+        let pesan = encodeURIComponent(
+          'Halo, saya tertarik dengan Tukar Tambah Bak/Box'
+        );
+        let url = `https://wa.me/${nomorTelepon}?text=${pesan}`;
+        window.location.href = url;
       }
     });
   };
@@ -121,8 +148,10 @@ export default function Page({ params }) {
           </Carousel>
 
           <div className="md:w-7/12 mx-3">
-            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-2">{produk.nama}</h2>
-            <div className="space-y-2">
+            <h2 className="text-2xl md:text-2xl font-bold uppercase mb-2">
+              {produk.nama}
+            </h2>
+            <div className="space-y-3">
               <p className="space-x-2">
                 <span className="text-gray-800 font-semibold">Kategori: </span>
                 <span className="uppercase">{produk.kategori}</span>
@@ -148,7 +177,9 @@ export default function Page({ params }) {
                 Rp{Number(produk.harga).toLocaleString('id-ID')}
               </p>
             </div>
-            <div className="flex flex-col gap-2">
+            <hr/>
+            <div className="flex flex-col gap-2 mt-5">
+              <span className="text-sm">Jumlah Barang</span>
               <div className="flex items-center border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max rounded">
                 <div
                   className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none border-none"
@@ -156,7 +187,7 @@ export default function Page({ params }) {
                 >
                   -
                 </div>
-                <div className="h-8 w-8 text-md flex items-center justify-center text-xl border-none">
+                <div className="h-8 w-8 text-md flex items-center justify-center text-xl border-none font-bold">
                   {jumlah}
                 </div>
                 <div
@@ -166,31 +197,45 @@ export default function Page({ params }) {
                   +
                 </div>
               </div>
-              <p className="text-sm">
-                Stok: <span className="font-bold">{produk.stok}</span>
+              <p className="text-base">
+                Stok: <span className="font-bold">{produk.stok}</span> barang tersisa
               </p>
             </div>
 
-            <div className="mt-3 flex flex-col lg:flex-row gap-3 py-5 text-center">
+            <div className="mt-3 flex flex-col gap-3 py-5 text-center">
+              <div className="flex flex-col lg:flex-row gap-3">
+                <button
+                  className="w-full border border-orange-600 rounded-lg px-2 py-3 text-orange-600 text-md"
+                  onClick={jualBakModal}
+                >
+                  Mau Tukar Tambah
+                </button>
+                <button
+                  className="w-full bg-blue-800 rounded-lg px-2 py-3 text-white text-md hover:bg-white hover:text-blue-800 border hover:border-blue-800"
+                  onClick={() => {
+                    addToCart({ ...produk, quantity: jumlah });
+                    fireAlert(produk);
+                  }}
+                >
+                  + Tambah Keranjang
+                </button>
+              </div>
               <Link
-                href={`https://wa.me/6281310893418?text=Halo+Bosq+${produk.nama} masih ada?`}
+                href={`https://wa.me/6281310893418?text=Halo+Bosq+${produk.nama} harga Rp${Number(produk.harga).toLocaleString('id-ID')} masih ada?`}
                 className="w-full bg-green-600 rounded-lg px-2 py-3 text-white text-md border border-green-600 hover:bg-white hover:text-green-600"
+                target="_blank"
               >
-                <i className="fa-brands fa-whatsapp"></i> Beli via Whatsapp
+                <i className="fa-brands fa-whatsapp"></i> Beli Sekarang
               </Link>
-              <button
-                className="w-full border border-blue-800 rounded-lg px-2 py-3 text-blue-800 text-md border border-blue-800 hover:bg-white hover:text-blue-800"
-                onClick={() => {
-                  addToCart({ ...produk, quantity: jumlah });
-                  fireAlert(produk);
-                }}
-              >
-                + Tambah Keranjang
-              </button>
             </div>
 
             <div className="container my-5 w-full">
-              <Tabs className="mr-5 w-full" deskripsi={produk.deskripsi} warna={produk.warna} berat={produk.berat} />
+              <Tabs
+                className="mr-5 w-full"
+                deskripsi={produk.deskripsi}
+                warna={produk.warna}
+                berat={produk.berat}
+              />
               <div className="flex gap-3 my-4 pb-4 items-center border-b border-gray-200">
                 <p>Bagikan ke</p>
                 <Link

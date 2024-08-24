@@ -32,10 +32,10 @@ function Tabs({ className, deskripsi, warna, berat }) {
         <div
           className={`transition-opacity duration-300 ${
             activeTab === 'description' ? 'opacity-100' : 'opacity-0 hidden'
-          }`}
+          } p-4 bg-gray-100`}
         >
-          <h3 className="text-lg font-semibold">Deskripsi</h3>
-          <div className="text-gray-600">
+          <h3 className="text-lg font-semibold">Deskripsi Barang</h3>
+          <div className="text-gray-600 mt-3">
             <p>{deskripsi}</p>
           </div>
         </div>
@@ -43,10 +43,10 @@ function Tabs({ className, deskripsi, warna, berat }) {
         <div
           className={`transition-opacity duration-300 ${
             activeTab === 'specification' ? 'opacity-100' : 'opacity-0 hidden'
-          }`}
+          } p-4 bg-gray-100`}
         >
           <h3 className="text-lg font-semibold">Spesifikasi</h3>
-          <table className="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
+          <table className="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6 bg-white">
             <tbody>
               <tr>
                 <th className="py-2 px-4 border border-gray-300 w-40 font-medium">

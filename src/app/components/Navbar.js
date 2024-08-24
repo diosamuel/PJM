@@ -50,10 +50,10 @@ export default function Navbar() {
 
   const jualBakModal = () => {
     Swal.fire({
-      title: 'Tukar Tambah Bak',
-      text: `Anda ingin menukar bak anda? chat whatsapp dibawah`,
+      title: 'Tukar Tambah',
+      text: `Anda ingin menukar Bak/Box Anda? Chat Whatsapp Dibawah!`,
       icon: 'success',
-      confirmButtonText: 'Kirim Whatsapp',
+      confirmButtonText: 'Chat Whatsapp',
       customClass: {
         confirmButton: 'bg-blue-600',
       },
@@ -61,7 +61,7 @@ export default function Navbar() {
       if (result.isConfirmed) {
         let nomorTelepon = '6281310893418';
         let pesan = encodeURIComponent(
-          'Halo, saya tertarik dengan Tukar Tambah Bak'
+          'Halo, saya tertarik dengan Tukar Tambah Bak/Box'
         );
         let url = `https://wa.me/${nomorTelepon}?text=${pesan}`;
         window.location.href = url;
@@ -111,7 +111,7 @@ export default function Navbar() {
               className="w-100 bg-white border-2 border-orange-500 text-orange-500 transition m-3 p-2 px-3 rounded-full font-semibold text-sm hover:bg-orange-500 hover:text-white"
               onClick={jualBakModal}
             >
-              JUAL BAK ANDA <i className="fa-solid fa-plus"></i>
+              MAU TUKAR TAMBAH <i className="fa-solid fa-plus"></i>
             </button>
           </div>
 

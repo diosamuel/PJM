@@ -3,7 +3,7 @@ export default function WhatsappMessage(carts) {
 
 	let craft = 'Halo Bosq, saya ingin memesan :';
 	carts.forEach((cart) => {
-		craft += `\n${cart.quantity} barang ${cart.nama} = ${cart.harga}`;
+		craft += `\n${cart.quantity} ${cart.nama} = Rp${Number(cart.harga).toLocaleString('id-ID')}`;
 	});
 	craft += `\n\nTOTAL: Rp${Number(total).toLocaleString('id-ID')}`;
 	craft += "\nApakah masih ada Bosq?"

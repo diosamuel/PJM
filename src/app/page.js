@@ -24,7 +24,7 @@ export default function Tentang() {
   const barang = [
     {
       img: '/assets/IMG-20230821-WA0009.jpg',
-      nama: 'Bak Levia Hitam',
+      nama: 'Bak Hitam',
       harga: 35000,
       awal: 400000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
@@ -65,19 +65,19 @@ export default function Tentang() {
           <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 pl-5 md:pl-20">
             <div className="mb-3">
             <h1
-              className="text-4xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 leading-tight mb-4"
+              className="text-4xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 mb-4"
               data-aos="fade-up"
             >
-              Beli Box, Bak, dan Sparepart Mobil disini!
+              Beli Box Pickup, Bak Truk, dan Sparepart Kendaraan lainnya disini!
             </h1>
-            <h3 className="text-xl md:text-2xl text-white md:font-semibold">Pardi Jaya Motor, Jual Bak/Box Pick Up, Bisa kirim ke seluruh indonesia</h3>
+            <h3 className="text-xl md:text-2xl text-white md:font-medium w-4/12">Pardi Jaya Motor, Jual Bak/Box/Sparepart Pick Up, Bisa kirim ke seluruh indonesia</h3>
             </div>
-            <div className="flex gap-3" data-aos="fade-up">
+            <div className="flex gap-3 mt-5" data-aos="fade-up">
               <Link
                 href="https://wa.me/6281310893418"
                 className="p-3 rounded-lg bg-green-500 text-white font-semibold flex gap-2 items-center"
               >
-                <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp
+                <i className="fa-brands fa-whatsapp"></i>Chat Whatsapp Sekarang!
               </Link>
               <Link
                 href="/toko"
@@ -89,7 +89,7 @@ export default function Tentang() {
             </div>
           </div>
 
-          <section className="flex flex-col justify-center items-center md:h-[100vh] gap-6">
+          <section className="flex flex-col justify-center items-center md:h-[100vh] gap-6" id="about">
             <h1
               className="text-2xl md:text-3xl font-semibold mt-10 md:mb-10 md:my-0"
               data-aos="fade-up"
@@ -229,10 +229,10 @@ export default function Tentang() {
                 ></iframe>
           </section>
           <section
-            className="flex flex-col text-center items-center justify-center md:mx-5 md:rounded-lg m-0 mt-20 md:mb-10 rounded-none h-[40vh] lg:h-[70vh] bg-[url('/assets/landing-banner-2.jpg')] bg-cover bg-center lg:bg-left gap-6 lg:gap-3"
+            className="flex flex-col text-center items-center justify-center md:mx-5 md:rounded-lg m-0 mt-20 md:mb-10 rounded-none h-[40vh] lg:h-[70vh] bg-[url('/assets/baner.png')] bg-cover bg-center lg:bg-left gap-6 lg:gap-3"
             data-aos="zoom-in"
           >
-            <h1 className="text-3xl md:text-5xl text-white font-semibold md:w-6/12 md:h-44 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-white font-semibold md:w-6/12 md:h-44">
               Pardi Jaya Motor Siap Melayani Seluruh Indonesia
             </h1>
             <div className="flex gap-3">

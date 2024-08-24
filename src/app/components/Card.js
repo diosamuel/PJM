@@ -23,11 +23,14 @@ export default function Card({ produk }) {
     <div className="bg-white hover:shadow-lg border border-gray-200 rounded-md overflow-hidden h-full flex flex-col justify-between">
       <Link href={`/toko/katalog/${produk.id}`}>
         <div className="relative">
-          <img
+{/*          <img
             src={`${process.env.NEXT_PUBLIC_API_HOST}/images/${produk.images[0]}`}
             alt="Produk"
             className="w-full object-cover h-[10em]"
-          />
+          />*/}
+          <div class="w-full h-[15em] bg-white flex items-center justify-center overflow-hidden">
+            <img src={`${process.env.NEXT_PUBLIC_API_HOST}/images/${produk.images[0]}`} alt="Image description" class="object-contain h-full w-full"/>
+          </div>
         </div>
         <div className="flex flex-col gap-2 my-4 mx-3">
           <div className="-space-y-1">
