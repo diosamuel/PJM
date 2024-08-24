@@ -11,14 +11,20 @@ export default function Keranjang() {
   let [check, setCheckbox] = useState({});
   let [ringkasan, showRingkasan] = useState(false);
   let [total, setTotal] = useState(0);
+  let [realTotal, setRealTotal] = useState(0);
   const { cart, clearCart } = useCartStore();
 
   useEffect(() => {
     const totalPrice = cart.reduce(
+      (sum, product) => (sum += product.diskon * product.quantity),
+      0
+    );
+    const totalRealPrice = cart.reduce(
       (sum, product) => (sum += product.harga * product.quantity),
       0
     );
     setTotal(totalPrice);
+    setRealTotal(totalRealPrice);
   }, [cart]);
 
   let fireAlert = () => {
@@ -109,7 +115,7 @@ export default function Keranjang() {
                     <div className="flex justify-between gap-2" key={n}>
                       <p className="text-sm">{produk.nama}</p>
                       <p className="text-lg">x{produk.quantity}</p>
-                      <p>Rp{Number(produk.harga).toLocaleString('id-ID')}</p>
+                      <p>Rp{Number(produk.diskon).toLocaleString('id-ID')}</p>
                     </div>
                   ))}
                 </div>
@@ -117,9 +123,14 @@ export default function Keranjang() {
                 <hr />
                 <div className="flex gap-3 align-middle items-center">
                   <p>Total</p>
-                  <strong className="text-xl md:text-2xl">
+                  <strong className="text-2xl md:text-2xl">
                     Rp{Number(total).toLocaleString('id-ID')}
                   </strong>
+                  <span className="line-through text-sm">Rp{Number(realTotal).toLocaleString('id-ID')}</span>
+                </div>
+                <div className="flex gap-2 items-center bg-blue-600 p-2 rounded">
+                  <p className="text-sm">Anda Menghemat</p>
+                  <span className="font-semibold text-sm">Rp{Number(realTotal-total).toLocaleString('id-ID')}</span>
                 </div>
                 <Link
                   href={WhatsappMessage(cart)}

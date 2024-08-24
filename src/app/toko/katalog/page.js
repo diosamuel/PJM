@@ -135,7 +135,7 @@ const Produk = () => {
             <div>
               <h3 className="text-md mb-3 uppercase font-semibold">Kategori</h3>
               <div className="space-y-2">
-                {['Bak', 'Box', 'Sparepart'].map((kategori, index) => (
+                {['Bak', 'Box', 'Sparepart','Bekas'].map((kategori, index) => (
                   <div className="flex items-center" key={index}>
                     <input
                       type="checkbox"

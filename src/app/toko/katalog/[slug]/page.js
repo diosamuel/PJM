@@ -84,10 +84,10 @@ export default function Page({ params }) {
       if (result.isConfirmed) {
         let nomorTelepon = '6281310893418';
         let pesan = encodeURIComponent(
-          'Halo, saya tertarik dengan Tukar Tambah Bak/Box'
+          `Halo, saya tertarik dengan Tukar Tambah ${produk.nama}`
         );
         let url = `https://wa.me/${nomorTelepon}?text=${pesan}`;
-        window.location.href = url;
+        window.open(url)
       }
     });
   };
@@ -221,7 +221,7 @@ export default function Page({ params }) {
                 </button>
               </div>
               <Link
-                href={`https://wa.me/6281310893418?text=Halo+Bosq+${produk.nama} harga Rp${Number(produk.harga).toLocaleString('id-ID')} masih ada?`}
+                href={`https://wa.me/6281310893418?text=Halo+Bosq+${produk.nama} harga Rp${Number(produk.diskon).toLocaleString('id-ID')} masih ada?`}
                 className="w-full bg-green-600 rounded-lg px-2 py-3 text-white text-md border border-green-600 hover:bg-white hover:text-green-600"
                 target="_blank"
               >
