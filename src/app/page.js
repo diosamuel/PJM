@@ -62,7 +62,7 @@ export default function Tentang() {
         <>
           <Navbar />
           <WhatsappFloat />
-          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 pl-5 md:pl-20">
+          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 px-3 md:px-10">
             <div className="mb-3">
             <h1
               className="text-3xl md:text-5xl font-bold text-white md:w-6/12 md:h-44 mb-4"
@@ -70,7 +70,7 @@ export default function Tentang() {
             >
               Beli Box Pickup, Bak Truk, dan Sparepart Kendaraan lainnya disini!
             </h1>
-            <h3 className="text-xl md:text-2xl text-white md:font-medium md:w-4/12">Pardi Jaya Motor, Jual Bak/Box/Sparepart Pick Up, Bisa kirim ke seluruh indonesia</h3>
+            <h3 className="text-lg md:text-2xl text-white md:font-medium md:w-4/12">Pardi Jaya Motor, Jual Bak/Box/Sparepart Pick Up, Bisa kirim ke seluruh indonesia</h3>
             </div>
             <div className="flex gap-3 mt-5" data-aos="fade-up">
               <Link
