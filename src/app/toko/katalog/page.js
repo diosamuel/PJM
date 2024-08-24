@@ -49,7 +49,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
           Lihat Semua Katalog
         </Link>
 
-        <h1 className="my-5">Mungkin Anda Suka Ini</h1>
+        <h1 className="my-5">Coba cek barang dibawah</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
         {randomProducts.map((product, index) => (
           <Card key={index} produk={product} />
