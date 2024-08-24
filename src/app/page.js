@@ -12,6 +12,7 @@ import WhatsappFloat from '@/app/components/WhatsappFloat';
 import React, { useState, useEffect } from 'react';
 import Slideshow from '@/app/components/Slideshow';
 
+
 export default function Tentang() {
   const [domLoaded, setDomLoaded] = useState(false);
 
