@@ -229,7 +229,7 @@ export default function Tentang() {
                 ></iframe>
           </section>
           <section
-            className="flex flex-col text-center items-center justify-center md:mx-5 md:rounded-lg m-0 mt-20 md:mb-10 rounded-none h-[40vh] lg:h-[70vh] bg-[url('/assets/baner.png')] bg-cover bg-center lg:bg-left gap-6 lg:gap-3"
+            className="flex flex-col text-center items-center justify-center md:mx-5 md:rounded-lg m-0 mt-20 md:mb-10 rounded-none h-[40vh] lg:h-[70vh] bg-[url('/assets/banergelap.png')] bg-cover bg-center lg:bg-left gap-6 lg:gap-3"
             data-aos="zoom-in"
           >
             <h1 className="text-3xl md:text-5xl text-white font-semibold md:w-6/12 md:h-44">
