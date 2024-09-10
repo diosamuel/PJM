@@ -12,32 +12,17 @@ const images = [
   '/assets/orang-naik-bak.jpg',
 ];
 
-const Slideshow = () => {
-  // const [index, setIndex] = useState(0);
-  // const timeoutRef = useRef(null);
+const videoTiktok = [
+  'https://www.tiktok.com/@pardijayamotor/video/7329809573051698438',
+  'https://www.tiktok.com/@pardijayamotor/video/7244235850706324742',
+  'https://www.tiktok.com/@pardijayamotor/video/7329809573051698438',
+  'https://www.tiktok.com/@pardijayamotor/video/7244235850706324742',
+  'https://www.tiktok.com/@pardijayamotor/video/7329809573051698438',
+  'https://www.tiktok.com/@pardijayamotor/video/7244235850706324742',
+  'https://www.tiktok.com/@pardijayamotor/video/7329809573051698438',
+];
 
-  // const delay = 3000;
-
-  // const resetTimeout = () => {
-  //   if (timeoutRef.current) {
-  //     clearTimeout(timeoutRef.current);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   resetTimeout();
-  //   timeoutRef.current = setTimeout(
-  //     () =>
-  //       setIndex((prevIndex) =>
-  //         prevIndex === images.length - 1 ? 0 : prevIndex + 1
-  //       ),
-  //     delay
-  //   );
-
-  //   return () => {
-  //     resetTimeout();
-  //   };
-  // }, [index]);
+const Slideshow = ({type}) => {
   const [slidePerview, setSlidePerview] = useState(3);
 
   const changeSlidesPerView = (option) => {
@@ -57,46 +42,60 @@ const Slideshow = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  return (
-    <Swiper
-      autoplay={{
-        delay: 1000,
-        disableOnInteraction: false,
-      }}
-      slidesPerView={slidePerview}
-      spaceBetween={10}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Autoplay, Navigation, Pagination]}
-    >
-      {images.map((image, idx) => (
-        <SwiperSlide>
-          <img
-            src={image}
-            alt={`Slide ${idx}`}
-            className="w-72 h-72 object-cover content-center rounded"
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-    // <div className="relative mx-auto overflow-hidden max-w-2xl rounded">
-    //   <div
-    //     className="flex transition-transform duration-500 ease-in-out"
-    //     style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-    //   >
-    //     {images.map((image, idx) => (
-    //       <div className="flex-shrink-0 w-full object-cover" key={idx}>
-    //         <img
-    //           src={image}
-    //           alt={`Slide ${idx}`}
-    //           className="w-full h-[15em] md:h-[25em] object-cover content-center"
-    //         />
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
-  );
+return (
+  <>
+    {type === "tiktok" ? (
+      <Swiper
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        slidesPerView={slidePerview}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Navigation, Pagination]}
+      >
+        {videoTiktok.map((tiktok, idx) => (
+          <SwiperSlide key={idx}>
+            <blockquote
+              cite={tiktok}
+              data-video-id={tiktok.match(/video\/(\d+)/)?.[1] || null}
+              className="tiktok-embed w-32"
+            >
+              <section></section>
+            </blockquote>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    ) : (
+      <Swiper
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        slidesPerView={slidePerview}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Navigation, Pagination]}
+      >
+        {images.map((image, idx) => (
+          <SwiperSlide key={idx}>
+            <img
+              src={image}
+              alt={`Slide ${idx}`}
+              className="w-72 h-72 object-cover content-center rounded"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    )}
+  </>
+);
+
 };
 
 export default Slideshow;

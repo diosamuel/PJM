@@ -32,8 +32,7 @@ export default function Footer() {
           </h3>
           {/*<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d506.51571714265623!2d106.60786319199144!3d-6.223958838880772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ffc9c2297359%3A0xfa4e86c9e3b1caae!2sPardi%20Jaya%20Motor%20Jual%20Bak%20Pick%20Up%20Tangerang!5e1!3m2!1sid!2sid!4v1713675145084!5m2!1sid!2sid" width="600" height="350" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className="rounded-lg w-fit mt-4"></iframe>*/}
           <span className="text-white">
-            Jl. Kavling Perkebunan III, Panunggangan Bar., Kec. Cibodas,
-            Kabupaten Tangerang, Banten 15810, Tangerang 15810
+            Bencongan Indah, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810
           </span>
         </div>
         <div>
