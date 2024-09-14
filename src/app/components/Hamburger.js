@@ -2,7 +2,7 @@ import Link from 'next/link';
 export default function Hamburger({ open }) {
   return (
     <div
-      className={`w-full h-fit bg-white z-40 fixed top-16 transition-all shadow-xl px-5 py-5 ${open ? 'top-0' : '-top-96'}`}
+      className={`w-full h-fit bg-white z-40 fixed transition-all shadow-xl px-5 py-5 ${open ? 'top-16' : '-top-96'}`}
     >
       <div className="flex flex-col gap-3 mb-6">
         <Link href="/" className="font-medium">
