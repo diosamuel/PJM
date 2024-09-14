@@ -228,7 +228,14 @@ export default function Page({ params }) {
                 <i className="fa-brands fa-whatsapp"></i> Beli Sekarang
               </Link>
             </div>
-
+            <div>
+              <h1 className='font-semibold'>Lihat juga di</h1>
+              <div className='flex items-center gap-3 my-2'>
+                <Link href="lazada.com"><img src="/assets/lazada-logo.png" className='w-14 rounded'/></Link>
+                <Link href="lazada.com"><img src="/assets/tokopedia-logo.png" className='w-14 rounded'/></Link>
+                <Link href="lazada.com"><img src="/assets/shopee-logo.png" className='w-14 rounded'/></Link>
+              </div>
+            </div>
             <div className="container my-5 w-full">
               <Tabs
                 className="mr-5 w-full"

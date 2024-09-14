@@ -51,10 +51,10 @@ export default function Keranjang() {
     <>
       <Navbar />
       <div className="md:m-10">
-        <h1 className="text-lg md:text-xl font-semibold mt-20 ml-5 md:ml-0 mb-3">
+        {/* <h1 className="text-lg md:text-xl font-semibold mt-20 ml-5 md:ml-0 mb-3">
           Keranjang Saya
-        </h1>
-        <div className="flex flex-col md:flex-row w-full gap-5 mb-20">
+        </h1> */}
+        <div className="flex flex-col md:flex-row w-full gap-5 my-20">
           {!!cart.length ? (
             <div className="w-full md:w-10/12">
               <div className="flex flex-col gap-4">
@@ -78,14 +78,14 @@ export default function Keranjang() {
               </div>
             </div>
           ) : (
-            <div className="w-full md:w-10/12 flex justify-center items-center">
-              <div className="w-full h-fit flex flex-col justify-center items-center text-center p-5 gap-5">
+            <div className="w-full md:w-10/12">
+              <div className="w-full h-fit flex flex-col text-left p-5 shadow gap-5">
                 <h1 className="text-xl font-semibold">
-                  Wah, keranjang belanjamu kosong
+                  Wah, keranjang belanjamu masih kosong
                 </h1>
                 <Link
                   href="/toko/katalog"
-                  className="bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
+                  className="w-fit bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
                 >
                   Cari Katalog
                 </Link>

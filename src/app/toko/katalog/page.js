@@ -32,24 +32,25 @@ const filterProducts = (products, keyword, categories) => {
 };
 
 const ProductDisplay = ({ products, keyword, categories }) => {
-  console.log(products)
   const randomProducts = [...products].sort(() => 0.5 - Math.random()).slice(0, 3);
   const filteredProducts = filterProducts(products, keyword, categories);
   if (keyword && !filteredProducts.length) {
     return (
-      <div className="m-5 flex flex-col items-center">
-        <h1 className="flex-col justify-center items-center text-xl text-center lg:text-2xl font-medium mb-5">
+      <div className="m-5 flex flex-col">
+        <div className='flex flex-col p-5 shadow-md rounded border'>
+        <h1 className="text-xl lg:text-2xl font-medium mb-5">
           Maaf, barang <span className="font-semibold">"{keyword}"</span> {!!categories.length && `di kategori ${categories}`} tidak
           ditemukan!
         </h1>
         <Link
           href="/toko/katalog"
-          className="bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
+          className="w-fit bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
         >
           Lihat Semua Katalog
         </Link>
+        </div>
 
-        <h1 className="my-5">Coba cek barang dibawah</h1>
+        <h1 className="my-5 font-bold text-xl">Rekomendasi untukmu</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
         {randomProducts.map((product, index) => (
           <Card key={index} produk={product} />
@@ -62,7 +63,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
   return (
     <>
       {keyword ? (
-        <h1 className="text-lg lg:text-xl font-medium mb-5">
+        <h1 className="text-lg lg:text-xl font-medium p-3 mb-5">
           Hasil pencarian untuk{' '}
           <span className="font-semibold">"{keyword}"</span>
         </h1>
@@ -71,7 +72,7 @@ const ProductDisplay = ({ products, keyword, categories }) => {
           <h1 className="font-semibold">Semua Barang</h1>
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full mb-10">
         {filteredProducts.map((product, index) => (
           <Card key={index} produk={product} />
         ))}
@@ -139,10 +140,10 @@ const Produk = () => {
             </button>
           </div>
           <div
-            className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile ? `-left-36` : `left-0`} transition md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}
+            className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile ? `-left-36` : `left-0`} transition-all md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}
           >
             <div>
-              <h3 className="text-md mb-3 uppercase font-semibold">Kategori</h3>
+              <h3 className="text-md mb-3 uppercase font-semibold">Pilih Kategori</h3>
               <div className="space-y-2">
                 {['Bak', 'Box', 'Sparepart','Bekas'].map((kategori, index) => (
                   <div className="flex items-center" key={index}>
