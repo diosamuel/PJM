@@ -87,7 +87,7 @@ export default function Page({ params }) {
           `Halo, saya tertarik dengan Tukar Tambah ${produk.nama}`
         );
         let url = `https://wa.me/${nomorTelepon}?text=${pesan}`;
-        window.open(url)
+        window.open(url);
       }
     });
   };
@@ -177,7 +177,7 @@ export default function Page({ params }) {
                 Rp{Number(produk.harga).toLocaleString('id-ID')}
               </p>
             </div>
-            <hr/>
+            <hr />
             <div className="flex flex-col gap-2 mt-5">
               <span className="text-sm">Jumlah Barang</span>
               <div className="flex items-center border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max rounded">
@@ -198,7 +198,8 @@ export default function Page({ params }) {
                 </div>
               </div>
               <p className="text-base">
-                Stok: <span className="font-bold">{produk.stok}</span> barang tersisa
+                Stok: <span className="font-bold">{produk.stok}</span> barang
+                tersisa
               </p>
             </div>
 
@@ -228,14 +229,41 @@ export default function Page({ params }) {
                 <i className="fa-brands fa-whatsapp"></i> Beli Sekarang
               </Link>
             </div>
-            <div>
-              <h1 className='font-semibold'>Lihat juga di</h1>
-              <div className='flex items-center gap-3 my-2'>
-                <Link href="lazada.com"><img src="/assets/lazada-logo.png" className='w-14 rounded'/></Link>
-                <Link href="lazada.com"><img src="/assets/tokopedia-logo.png" className='w-14 rounded'/></Link>
-                <Link href="lazada.com"><img src="/assets/shopee-logo.png" className='w-14 rounded'/></Link>
+            {(produk.lazada || produk.shopee || produk.tokopedia) && (
+              <div>
+                <h1 className="font-semibold">Lihat juga di</h1>
+                <div className="flex items-center gap-3 my-2">
+                  {produk.lazada && (
+                    <Link href={produk.lazada}>
+                      <img
+                        src="/assets/lazada-logo.png"
+                        className="w-14 rounded"
+                        alt="Lazada"
+                      />
+                    </Link>
+                  )}
+                  {produk.shopee && (
+                    <Link href={produk.shopee}>
+                      <img
+                        src="/assets/shopee-logo.png"
+                        className="w-14 rounded"
+                        alt="Shopee"
+                      />
+                    </Link>
+                  )}
+                  {produk.tokopedia && (
+                    <Link href={produk.tokopedia}>
+                      <img
+                        src="/assets/tokopedia-logo.png"
+                        className="w-14 rounded"
+                        alt="Tokopedia"
+                      />
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
+
             <div className="container my-5 w-full">
               <Tabs
                 className="mr-5 w-full"
