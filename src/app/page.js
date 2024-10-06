@@ -22,36 +22,36 @@ export default function Tentang() {
 
   const barang = [
     {
-      img: '/assets/IMG-20230821-WA0009.jpg',
-      nama: 'Bak Hitam',
-      harga: 35000,
-      awal: 400000,
+      img: '/assets/isuzutraga.jpg',
+      nama: 'KEPALA KABIN ISUZU TRAGA ORIGINAL',
+      harga: 34999000,
+      awal: 34999000,
+      deskripsi: 'Baru Original Kosongan hanya Rangka, tidak ada Isi',
+      kategori: 'bak',
+    },
+    {
+      img: '/assets/daihatsugranmax.jpg',
+      nama: 'BAK DAIHATSU GRANMAX ORIGINAL',
+      harga: 8500000,
+      awal: 8500000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
       kategori: 'bak',
     },
     {
-      img: '/assets/bak_kargo_super.jpg',
-      nama: 'BAK PICK UP GRANMAX HITAM',
-      harga: 300000,
-      awal: 400000,
+      img: '/assets/apvbekas.jpg',
+      nama: 'BAK APV BEKAS EXTRA ORI COPOTAN',
+      harga: 5500000,
+      awal: 5500000,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
       kategori: 'bak',
     },
     {
-      img: '/assets/produk.jpg',
-      nama: 'BAK FJ45 HIJAU',
-      harga: 1090000,
-      awal: 400000,
+      img: '/assets/hardtop.jpg',
+      nama: 'BAK TOYOTA HARDTOP FJ 45',
+      harga: 10999999,
+      awal: 10999999,
       deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
       kategori: 'bak',
-    },
-    {
-      img: '/assets/565_mm_22_inchx_3cm_dop_roda_bus_belakang.jpg',
-      nama: 'Roda Bus Belakang Tesla',
-      harga: 120000,
-      awal: 49900,
-      deskripsi: 'Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box',
-      kategori: 'Sparepart',
     },
   ];
 
@@ -204,12 +204,12 @@ export default function Tentang() {
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
               <TestimonialCard
-                name="Jungkook Newjeans"
+                name="Pardi Sitorus"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
               <TestimonialCard
-                name="Jihyo Twice"
+                name="Pardi Sitorus"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />

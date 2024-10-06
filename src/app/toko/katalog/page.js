@@ -32,30 +32,33 @@ const filterProducts = (products, keyword, categories) => {
 };
 
 const ProductDisplay = ({ products, keyword, categories }) => {
-  const randomProducts = [...products].sort(() => 0.5 - Math.random()).slice(0, 3);
+  const randomProducts = [...products]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
   const filteredProducts = filterProducts(products, keyword, categories);
   if (keyword && !filteredProducts.length) {
     return (
       <div className="m-5 flex flex-col">
-        <div className='flex flex-col p-5 shadow-md rounded border'>
-        <h1 className="text-xl lg:text-2xl font-medium mb-5">
-          Maaf, barang <span className="font-semibold">"{keyword}"</span> {!!categories.length && `di kategori ${categories}`} tidak
-          ditemukan!
-        </h1>
-        <Link
-          href="/toko/katalog"
-          className="w-fit bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
-        >
-          Lihat Semua Katalog
-        </Link>
+        <div className="flex flex-col p-5 shadow-md rounded border">
+          <h1 className="text-xl lg:text-2xl font-medium mb-5">
+            Maaf, barang <span className="font-semibold">"{keyword}"</span>{' '}
+            {!!categories.length && `di kategori ${categories}`} tidak
+            ditemukan!
+          </h1>
+          <Link
+            href="/toko/katalog"
+            className="w-fit bg-blue-800 rounded-lg px-3 py-2 text-white text-md border border-blue-800 hover:bg-white hover:text-blue-800"
+          >
+            Lihat Semua Katalog
+          </Link>
         </div>
 
         <h1 className="my-5 font-bold text-xl">Rekomendasi untukmu</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
-        {randomProducts.map((product, index) => (
-          <Card key={index} produk={product} />
-        ))}
-      </div>
+          {randomProducts.map((product, index) => (
+            <Card key={index} produk={product} />
+          ))}
+        </div>
       </div>
     );
   }
@@ -73,9 +76,9 @@ const ProductDisplay = ({ products, keyword, categories }) => {
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full mb-10">
-        {filteredProducts.map((product, index) => (
+        {!!filteredProducts.length ? filteredProducts.map((product, index) => (
           <Card key={index} produk={product} />
-        ))}
+        )):<h1>Barang Masih Kosong</h1>}
       </div>
     </>
   );
@@ -123,7 +126,9 @@ const Produk = () => {
   }, [searchParams]);
 
   if (loading) return <Spinner />;
-  if (error) return <div>Error: {error}</div>;
+  if (error) {
+    setError("Server Error")
+  }
 
   return (
     <>
@@ -132,6 +137,7 @@ const Produk = () => {
         <div className="container flex flex-col md:flex-row gap-3">
           <div className="flex justify-between text-md fixed md:static w-full md:w-fit z-10 px-5 md:p-0 py-4 top-16 bg-blue-800 text-white shadow">
             <h1 className="font-semibold block md:hidden">Semua Barang</h1>
+            {error && <h1>Error, Muat Ulang</h1>}
             <button
               onClick={() => toggleSidebarMobile(!sidebarMobile)}
               className="block md:hidden flex gap-2 text-sm items-center"
@@ -140,12 +146,14 @@ const Produk = () => {
             </button>
           </div>
           <div
-            className={`space-y-5 border border-gray-300 shadow p-3 rounded-lg h-full ${!sidebarMobile ? `-left-36` : `left-0`} transition-all md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}
+            className={`z-50 mb-10 space-y-5 shadow-lg p-3 rounded-lg h-full ${!sidebarMobile ? `-left-48` : `left-0`} transition-all md:top-20 md:w-2/12 bg-white fixed md:sticky top-16 z-10`}
           >
             <div>
-              <h3 className="text-md mb-3 uppercase font-semibold">Pilih Kategori</h3>
-              <div className="space-y-2">
-                {['Bak', 'Box', 'Sparepart','Bekas'].map((kategori, index) => (
+              <h3 className="text-md my-3 uppercase font-semibold">
+                Kategori
+              </h3>
+              <div className="space-y-1">
+                {['Bak', 'Box', 'Sparepart', 'Bekas'].map((kategori, index) => (
                   <div className="flex items-center" key={index}>
                     <input
                       type="checkbox"
