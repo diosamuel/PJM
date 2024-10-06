@@ -4,11 +4,6 @@ export default function Card({ produk }) {
     <div className="bg-white hover:shadow-lg border border-gray-200 rounded-md overflow-hidden h-full w-[20em]">
       <Link href="/">
         <div className="relative">
-{/*          <img
-            src={produk.img}
-            alt="product 1"
-            className="w-full object-cover h-[10em]"
-          />*/}
           <div class="w-full h-[10em] bg-white flex items-center justify-center overflow-hidden">
             <img src={produk.img} alt={produk.nama} class="object-contain h-full w-full"/>
           </div>
