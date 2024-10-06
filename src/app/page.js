@@ -62,7 +62,7 @@ export default function Tentang() {
         <>
           <Navbar />
           <WhatsappFloat />
-          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.png')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 px-3 md:px-10">
+          <div className="flex flex-col items-start justify-center h-[80vh] lg:h-[100vh] bg-[url('/assets/cobabaner-warna.jpg')] bg-cover bg-center lg:bg-left gap-6 md:gap-0 px-3 md:px-10">
             <div className="mb-3">
               <h1
                 className="text-3xl md:text-3xl lg:text-5xl font-bold text-white lg:w-7/12 md:w-8/12 mb-4"
@@ -91,7 +91,7 @@ export default function Tentang() {
                 <i class="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
-            <img src="/assets/pickup.png" className="absolute hidden md:block md:w-72 lg:w-96 md:right-5"/>
+            <img src="/assets/pickup.png" className="absolute hidden md:block md:w-72 lg:w-96 md:right-5" alt={"Jual Pickup Indonesia"}/>
           </div>
 
           <section
