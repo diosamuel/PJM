@@ -30,12 +30,12 @@ function Tabs({ className, deskripsi, warna, berat }) {
 
       <div className="my-4">
         <div
-          className={`transition-opacity duration-300 ${
+          className={`transition-opacity duration-300 text-wrap w-full ${
             activeTab === 'description' ? 'opacity-100' : 'opacity-0 hidden'
           } p-4 bg-gray-100`}
         >
           <h3 className="text-lg font-semibold">Deskripsi Barang</h3>
-          <div className="text-gray-600 mt-3">
+          <div className="text-gray-600 mt-3 max-w-lg break-words">
             <p>{deskripsi}</p>
           </div>
         </div>

@@ -234,7 +234,7 @@ export default function Page({ params }) {
                 <h1 className="font-semibold">Lihat juga di</h1>
                 <div className="flex items-center gap-3 my-2">
                   {produk.lazada && (
-                    <Link href={produk.lazada}>
+                    <Link href={produk.lazada} target='_blank'>
                       <img
                         src="/assets/lazada-logo.png"
                         className="w-14 rounded"
@@ -243,7 +243,7 @@ export default function Page({ params }) {
                     </Link>
                   )}
                   {produk.shopee && (
-                    <Link href={produk.shopee}>
+                    <Link href={produk.shopee} target='_blank'>
                       <img
                         src="/assets/shopee-logo.png"
                         className="w-14 rounded"
@@ -252,7 +252,7 @@ export default function Page({ params }) {
                     </Link>
                   )}
                   {produk.tokopedia && (
-                    <Link href={produk.tokopedia}>
+                    <Link href={produk.tokopedia} target='_blank'>
                       <img
                         src="/assets/tokopedia-logo.png"
                         className="w-14 rounded"
