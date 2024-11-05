@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 function Tabs({ className, deskripsi, warna, berat }) {
   const [activeTab, setActiveTab] = useState('description');
-
   const openTab = (tabName) => {
     setActiveTab(tabName);
   };
+  let desc=JSON.parse(deskripsi).split(/\n/g).join("<br/>")
 
   return (
     <div className={className}>
@@ -36,7 +36,7 @@ function Tabs({ className, deskripsi, warna, berat }) {
         >
           <h3 className="text-lg font-semibold">Deskripsi Barang</h3>
           <div className="text-gray-600 mt-3 max-w-lg break-words">
-            <p>{deskripsi}</p>
+            <p dangerouslySetInnerHTML={{__html:desc}}></p>
           </div>
         </div>
 
