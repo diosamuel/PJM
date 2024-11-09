@@ -12,16 +12,16 @@ export default function Footer() {
             <p className="text-white w-fit">
               Jual Bak/Box Pick Up Tangerang Terima Tukar-Tambah Bak/Box
             </p>
-            <p className="text-white w-fit">+628483726378</p>
+            <p className="text-white w-fit">081310893418</p>
           </div>
           <div className="flex space-x-4 text-3xl">
-            <Link href="#" className="text-gray-400">
+            <Link href="https://www.instagram.com/pardijayamotor" className="text-gray-400">
               <i className="fa-brands fa-facebook-square"></i>
             </Link>
-            <Link href="#" className="text-gray-400">
+            <Link href="https://www.facebook.com/pardioktaviando.oktaviando?mibextid=kFxxJD" className="text-gray-400">
               <i className="fa-brands fa-instagram-square"></i>
             </Link>
-            <Link href="#" className="text-gray-400">
+            <Link href="https://x.com/pardijayamotor?t=MjGrJoX9_VG7p5-vE2K0gA&s=09 " className="text-gray-400">
               <i className="fa-brands fa-twitter-square"></i>
             </Link>
           </div>
@@ -40,10 +40,10 @@ export default function Footer() {
             Halaman
           </h3>
           <div className="mt-2">
-            <Link href="#" className="text-base text-white block">
+            <Link href="/toko" className="text-base text-white block">
               Beli Produk
             </Link>
-            <Link href="#" className="text-base text-white block">
+            <Link href="https://linktr.ee/pardijayamotor" className="text-base text-white block">
               Toko Online
             </Link>
             <Link href="#" className="text-base text-white block">

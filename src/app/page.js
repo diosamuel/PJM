@@ -194,22 +194,22 @@ export default function Tentang() {
             </p>
             <div className="grid grid-cols-4 w-full gap-[21em] lg:gap-2 overflow-x-auto pl-3 lg:pl-0 lg:w-fit mb-10">
               <TestimonialCard
-                name="Remitha Angkat"
+                name="Joko"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
               <TestimonialCard
-                name="Pardi Sitorus"
+                name="Agus"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
               <TestimonialCard
-                name="Pardi Sitorus"
+                name="Salim"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
               <TestimonialCard
-                name="Pardi Sitorus"
+                name="Masnur"
                 stars={5}
                 description="Bagus banget,terpercaya juga mungkin untuk harga bisa dibicarakan tapi pelayanannya ramah"
               />
