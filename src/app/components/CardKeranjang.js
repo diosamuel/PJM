@@ -41,6 +41,9 @@ export default function CardKeranjang({ className, produk, checked }) {
         <Link href={`/toko/katalog/${produk.id}`}>
           <img
             src={`${process.env.NEXT_PUBLIC_API_HOST}/images/${produk.images[0]}`}
+            onError={(e) => {
+              e.target.src = 'https://placehold.co/600x400?text=Blank+Image';
+            }}
             className="w-32 h-32 object-cover object-center rounded-lg"
           />
         </Link>

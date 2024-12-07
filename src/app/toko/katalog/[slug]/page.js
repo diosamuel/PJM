@@ -139,8 +139,11 @@ export default function Page({ params }) {
                   src={
                     image
                       ? `${process.env.NEXT_PUBLIC_API_HOST}/images/${image}`
-                      : `https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png`
+                      : `https://placehold.co/600x400?text=Blank+Image`
                   }
+                  onError={(e) => {
+                    e.target.src = 'https://placehold.co/600x400?text=Blank+Image';
+                  }}
                   className="md:rounded-lg h-[20em] lg:h-[30em] object-contain object-center"
                 />
               </div>

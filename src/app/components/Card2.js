@@ -5,7 +5,14 @@ export default function Card({ produk }) {
       <Link href="/">
         <div className="relative">
           <div class="w-full h-[10em] bg-white flex items-center justify-center overflow-hidden">
-            <img src={produk.img} alt={produk.nama} class="object-contain h-full w-full"/>
+            <img
+              src={produk.img}
+              alt={produk.nama}
+              onError={(e) => {
+                e.target.src = 'https://placehold.co/600x400?text=Blank+Image';
+              }}
+              class="object-contain h-full w-full"
+            />
           </div>
           <p
             className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
